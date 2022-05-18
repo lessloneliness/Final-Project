@@ -23,7 +23,7 @@ const ListFriendScreen = () => {
       if (doc.exists) {
         setList(doc.data().Friends);
 
-        console.log("user: " + JSON.stringify(doc.data().Name));
+        //console.log("user: " + JSON.stringify(doc.data().Name));
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -34,7 +34,7 @@ const ListFriendScreen = () => {
     });
 
   const RemoveFriend = (IdFriend) => {
-    console.log("User 222232: ", auth.currentUser?.email);
+    //console.log("User 222232: ", auth.currentUser?.email);
 
     firebase
       .firestore()
@@ -64,9 +64,9 @@ const ListFriendScreen = () => {
       >
         <Text style={styles.text}>My friends</Text>
         <View style={styles.container}>
-          {list.map((person) => {
+          {list.map((person, index) => {
             return (
-              <View style={styles.container}>
+              <View key={index + person} style={styles.container}>
                 <Text style={styles.item}>Email:{person}</Text>
                 <TouchableOpacity
                   onPress={() => RemoveFriend(person)}

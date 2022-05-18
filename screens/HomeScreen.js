@@ -252,7 +252,12 @@ const HomeScreen = () => {
               style={[styles.button11, styles.buttonText11]}
             >
               <Text style={styles.buttonOutline2}>My Friends</Text>
-              <Text style={styles.buttonOutline2}>My Group:{group}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Groups")}
+              style={[styles.button, styles.buttonOutline]}
+            >
+              <Text style={styles.buttonOutline2}>My Group</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

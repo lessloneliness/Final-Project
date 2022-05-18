@@ -44,7 +44,10 @@ const GroupsScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
+    <View
+      style={{ justifyContent: "center", marginTop: 30, alignItems: "center" }}
+    >
+      <Text style={styles.text}> My Groups</Text>
       <FlatList
         data={list}
         renderItem={renderItem}
@@ -76,12 +79,21 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    backgroundColor: "blue",
+    padding: 2,
+    fontSize: 15,
+    marginTop: 0,
+    marginBottom: 5,
   },
   title: {
-    fontSize: 32,
+    fontSize: 20,
+    padding: 2,
+  },
+  text: {
+    fontSize: 23,
+    color: "green",
+    fontStyle: "italic",
+    marginTop: 0,
+    marginBottom: 33,
+    textDecorationLine: "underline",
   },
 });

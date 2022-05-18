@@ -249,7 +249,7 @@ const HomeScreen = () => {
             <Text></Text>
             <TouchableOpacity
               onPress={() => navigation.replace("My Friend")}
-              style={[styles.button11, styles.buttonText11]}
+              style={[styles.button, styles.buttonOutline]}
             >
               <Text style={styles.buttonOutline2}>My Friends</Text>
             </TouchableOpacity>

@@ -39,7 +39,7 @@ const HomeScreen = () => {
     .then(function (doc) {
       if (doc.exists) {
         const userNameDB = JSON.stringify(doc.data().Name.First); //his name from the data  base
-        setbioFromDb(JSON.stringify(doc.data().Bio));
+        setbioFromDb(doc.data().Bio);
         const friends = JSON.stringify(doc.data().Friends);
         const g = JSON.stringify(doc.data().GroupsId);
 
@@ -57,7 +57,7 @@ const HomeScreen = () => {
             console.log(e);
           });
 
-        console.log("user: " + JSON.stringify(doc.data().Name));
+        //console.log("user: " + JSON.stringify(doc.data().Name));
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -242,8 +242,7 @@ const HomeScreen = () => {
               <Text style={styles.buttonOutlineText}>Save Bio</Text>
             </TouchableOpacity>
           </View>
-          <Text></Text>
-          <Text style={styles.buttonOutline2}>{bioFromDb} </Text>
+          <Text style={styles.buttonOutline2}>{bioFromDb}</Text>
           <View style={styles.emailView}>
             <Text></Text>
             <Text></Text>
@@ -258,6 +257,12 @@ const HomeScreen = () => {
               style={[styles.button, styles.buttonOutline]}
             >
               <Text style={styles.buttonOutline2}>My Group</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Events")}
+              style={[styles.button, styles.buttonOutline]}
+            >
+              <Text style={styles.buttonOutline2}>My Events</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

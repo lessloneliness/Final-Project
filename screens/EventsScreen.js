@@ -10,7 +10,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import { auth } from "../firebase";
 
-const GroupsScreen = ({ navigation }) => {
+const EventsScreen = ({ navigation }) => {
   const [list, setList] = useState([]);
   const user = auth.currentUser;
   const userRef = firebase.firestore().collection("users").doc(user.uid); // get the uid.
@@ -20,7 +20,7 @@ const GroupsScreen = ({ navigation }) => {
       .then(function (doc) {
         if (doc.exists) {
           setList(
-            doc.data().GroupsId.map((item, index) => ({
+            doc.data().EventsId.map((item, index) => ({
               id: item + index,
               title: item,
             }))
@@ -36,7 +36,7 @@ const GroupsScreen = ({ navigation }) => {
 
   const Item = ({ item }) => (
     <TouchableOpacity style={[styles.item]}>
-      <Text style={styles.text1}> Group</Text>
+      <Text style={styles.text1}> Event</Text>
       <Text style={[styles.title]}>{item.title}</Text>
     </TouchableOpacity>
   );
@@ -48,7 +48,7 @@ const GroupsScreen = ({ navigation }) => {
     <View
       style={{ justifyContent: "center", marginTop: 30, alignItems: "center" }}
     >
-      <Text style={styles.text}> My Groups</Text>
+      <Text style={styles.text}> My Events</Text>
       <FlatList
         data={list}
         renderItem={renderItem}
@@ -64,7 +64,7 @@ const GroupsScreen = ({ navigation }) => {
   );
 };
 
-export default GroupsScreen;
+export default EventsScreen;
 
 const styles = StyleSheet.create({
   button: {

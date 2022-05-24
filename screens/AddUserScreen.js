@@ -66,7 +66,7 @@ const AddUserScreen = () => {
           alignItems: "center",
         }}
       >
-        <Text style={styles.text}>ALL THE USER IN THE APP</Text>
+        <Text style={styles.text}>All the users in the app</Text>
         <View style={styles.container}>
           {list.map((person) => {
             return (

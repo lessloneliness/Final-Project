@@ -7,11 +7,12 @@ import LoginScreen from "./screens/LoginScreen";
 import HomeScreen from "./screens/HomeScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import xxx from "./screens/xxx";
-import CreateGroupScreen from "./screens/CreateGroupScreen";
+import CreateGroupScreen from "./screens/CreategroupScreen";
 import AddUserScreen from "./screens/AddUserScreen";
 import CreateEvent from "./screens/CreateEvent";
 import ListFriendScreen from "./screens/ListFriendScreen";
 import GroupsScreen from "./screens/GroupsScreen";
+import EventsScreen from "./screens/EventsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ export default function App() {
         <Stack.Screen name="Create Event Screen" component={CreateEvent} />
         <Stack.Screen name="My Friend" component={ListFriendScreen} />
         <Stack.Screen name="Groups" component={GroupsScreen} />
+        <Stack.Screen name="Events" component={EventsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

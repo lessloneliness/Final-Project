@@ -20,6 +20,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="xxx" component={xxx} />
+
         <Stack.Screen
           options={{ headerShown: true }}
           name="Less loneless"

@@ -77,9 +77,10 @@ const GroupScreen = () => {
       .then(() => navigation.replace("Home"));
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.contentContainer}>
+
+    <View style={styles.inputContainer}>
       <Text style={styles.headerText}>Create Group</Text>
-      <View style={styles.formContainer}>
         <TextInput
           style={styles.textInput}
           onChangeText={setGroupName}
@@ -114,13 +115,7 @@ const GroupScreen = () => {
           placeholder="Select Friends"
         />
       </View>
-      <TouchableOpacity
-        style={{
-          textAlign: "center",
-          backgroundColor: "green",
-          width: "35%",
-          height: "5%",
-        }}
+      <TouchableOpacity style={[styles.button, styles.buttonOutline]}
         onPress={createGroup}
       >
         <Text
@@ -131,11 +126,11 @@ const GroupScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.replace("Home")}
-        style={[styles.button, styles.buttonOutline]}
+        style={[styles.button2, styles.buttonText]}
       >
         <Text style={styles.buttonOutlineText}>Back</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -147,49 +142,66 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "white",
     // justifyContent:"center"
-    alignItems: "center",
-    justifyContent: "space-around",
   },
+  
+  inputContainer: {
+    paddingVertical: 15,
+    justifyContent: "center",
+    paddingHorizontal: 20,  },
+    
   headerText: {
-    fontSize: 30,
+    fontSize: 20,
   },
   formContainer: {
     width: "100%",
     height: "60%",
     zIndex: -1000,
-    borderWidth: 1,
+    borderWidth: 0,
     alignItems: "center",
     //justifyContent: "space-around",
   },
   picker: {
     marginVertical: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    borderRadius: 10,
+    marginTop: 10,
+    marginBottom:5,
   },
   textInput: {
-    width: "75%",
-    height: "15%",
     fontSize: 15,
     borderWidth: 1,
+    backgroundColor: "white",
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    borderRadius: 10,
+    marginTop: 15,
   },
   button: {
-    backgroundColor: "red",
-    width: "60%",
-    padding: 15,
-    borderRadius: 10,
+    backgroundColor: "#0782F9",
+    width: "40%",
+    padding: 7,
+    borderRadius: 50,
     alignItems: "center",
-    marginTop: 40,
+    marginTop: '50%',
+    marginHorizontal: "25%",
+
+
   },
   button2: {
-    backgroundColor: "black",
-    width: "40%",
-    padding: 12,
-    borderRadius: 10,
+    backgroundColor: "white", // sumbit btn
+    padding: 10,
+    width: 100,
+    borderRadius: 50,
     alignItems: "center",
-    marginTop: 20,
+    borderWidth: 1,
   },
   buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
+    color: "green",
+    fontSize: 2,
+    marginTop: '5%',
+    backgroundColor: "red",
+    marginHorizontal: "33%",
   },
   Image: {
     width: 150,

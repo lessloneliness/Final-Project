@@ -9,7 +9,7 @@ import {
   TextInput,
   View,
   Image,
-  Picker,
+  SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
@@ -101,9 +101,10 @@ const CreateEvent = () => {
       .then(() => navigation.replace("Home"));
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView>
+         <View style={styles.inputContainer}>
+
       <Text style={styles.headerText}>Create Event</Text>
-      <View style={styles.formContainer}>
         <TextInput
           style={styles.textInput}
           onChangeText={setEventName}
@@ -123,11 +124,13 @@ const CreateEvent = () => {
           <View>
             <Pressable
               style={{
-                backgroundColor: "white",
-                width: 280,
-                height: 40,
-                color: "black",
+                fontSize: 15,
                 borderWidth: 1,
+                backgroundColor: "white",
+                paddingHorizontal: 15,
+                paddingVertical: 7,
+                borderRadius: 10,
+                marginTop: 15,
               }}
               onPress={showDatepicker}
               title="Ch"
@@ -138,11 +141,13 @@ const CreateEvent = () => {
           <View>
             <Pressable
               style={{
-                backgroundColor: "white",
-                width: 280,
-                height: 40,
-                color: "black",
+                fontSize: 15,
                 borderWidth: 1,
+                backgroundColor: "white",
+                paddingHorizontal: 15,
+                paddingVertical: 7,
+                borderRadius: 10,
+                marginTop: 15,
               }}
               onPress={showTimepicker}
               title="Ch"
@@ -178,10 +183,13 @@ const CreateEvent = () => {
       </View>
       <TouchableOpacity
         style={{
-          textAlign: "center",
-          backgroundColor: "green",
-          width: "35%",
-          height: "5%",
+          backgroundColor: "#0782F9",
+          width: "40%",
+          padding: 7,
+          borderRadius: 50,
+          alignItems: "center",
+          marginTop: '10%',
+          marginHorizontal: "25%",
         }}
         onPress={CreateEvent}
       >
@@ -197,7 +205,7 @@ const CreateEvent = () => {
       >
         <Text style={styles.buttonOutlineText}>Back</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -205,32 +213,35 @@ export default CreateEvent;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 20,
     backgroundColor: "white",
-    // justifyContent:"center"
-    alignItems: "center",
-    justifyContent: "space-around",
   },
   headerText: {
-    fontSize: 30,
+    fontSize: 20,
   },
-  formContainer: {
-    width: "100%",
-    height: "60%",
-    zIndex: -1000,
-    borderWidth: 1,
-    alignItems: "center",
-    //justifyContent: "space-around",
-  },
+  inputContainer: {
+    paddingVertical: 15,
+    justifyContent: "center",
+    paddingHorizontal: 40,
+    },
+    
+
   picker: {
     marginVertical: 10,
-  },
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    borderRadius: 10,
+    marginTop: 10,
+    marginBottom:5,
+    },
   textInput: {
-    width: "75%",
-    height: "15%",
     fontSize: 15,
     borderWidth: 1,
+    backgroundColor: "white",
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    borderRadius: 10,
+    marginTop: 15,
   },
   button: {
     backgroundColor: "red",
@@ -239,40 +250,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     marginTop: 40,
+    marginHorizontal: "18%",
+
   },
-  button2: {
-    backgroundColor: "black",
-    width: "40%",
-    padding: 12,
-    borderRadius: 10,
-    alignItems: "center",
-    marginTop: 20,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-  Image: {
-    width: 150,
-    height: 150,
-    borderRadius: 150 / 2,
-    overflow: "hidden",
-    borderWidth: 3,
-    borderColor: "black",
-    marginBottom: "1%",
-    marginHorizontal: "30%",
-    marginVertical: "0%",
-  },
-  textAreaContainer: {
-    borderColor: "gray",
-    borderWidth: 0,
-    padding: 1,
-    backgroundColor: "rgba(52, 52, 52, 0.1)",
-    marginHorizontal: "7%",
-  },
-  textArea: {
-    height: 70,
-    justifyContent: "flex-start",
-  },
+ 
+
+ 
+ 
 });

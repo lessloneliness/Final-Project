@@ -234,7 +234,7 @@ const CreateEvent = () => {
           padding: 7,
           borderRadius: 50,
           alignItems: "center",
-          marginTop: "10%",
+          marginTop: "1%",
           marginHorizontal: "30%",
         }}
         onPress={CreateEvent}
